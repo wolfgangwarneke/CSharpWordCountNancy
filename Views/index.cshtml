@@ -1,18 +1,29 @@
-<h1>Word Count</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Word Count</title>
+    <link href="/Content/style.css" rel="stylesheet" type="text/CSS">
+  </head>
+  <body>
+    <main>
+      <h1>Word Count</h1>
 
-<form action="/submit" method="post">
-  <label for="userString">Place a sentence and which word to count</label><br>
-  <textarea name="userString" rows="5" cols="80">Your text goes here</textarea><br>
-  <label for="userWord">Which word to count?</label><br>
-  <input type="text" name="userWord" id="userWord" required><br>
-  <button type="submit">Do it.</button>
-</form>
+      <form action="/submit" method="post">
+        <label for="userString">Place a sentence and which word to count</label><br>
+        <textarea name="userString" rows="5" cols="80" placeholder="Your text goes here"></textarea><br>
+        <label for="userWord">Which word to count?</label><br>
+        <input type="text" name="userWord" id="userWord" required><br>
+        <button type="submit">Do it.</button>
+      </form>
 
-@if (Model != null) {
-  <p>
-    @Html.Raw(Model.GetBoldOutput())
-  </p>
-  <p>
-    @Model.GetOccurenceAmountMessage()
-  </p>
-}
+      @if (Model != null) {
+        <p>
+          @Html.Raw(Model.GetBoldOutput())
+        </p>
+        <p>
+          @Model.GetOccurenceAmountMessage()
+        </p>
+      }
+    </main>
+  </body>
+</html>

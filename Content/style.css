@@ -1,0 +1,20 @@
+main {
+  font-family: sans-serif;
+  font-variant: small-caps;
+  margin: 10px auto auto 15px;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+input, textarea {
+  margin: 15px auto 17px 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgba(256,256,256,0.7);
+}
+
+label {
+  font-size: 1.5em;
+  margin: 10px 15px;
+}
