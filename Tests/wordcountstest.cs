@@ -26,5 +26,32 @@ namespace WordCount.Objects
 
       Assert.Equal(expectedResult, totalTest);
     }
+    [Fact]
+    public void CountWords_MyCatsBreatheSmellsLikeCatFoodCHECKINGdog_7WordsDoesNotContainDog()
+    {
+      string input = "My cat's breathe smells like cat food.";
+      string wordToCheck = "dog";
+      string expectedResult = @"7 words. Does not contain ""dog"".";
+
+      WordCounter.CountWords(input, wordToCheck);
+      string allCount = WordCounter.GetAllWordsOutput();
+      string uniqueCount = WordCounter.GetUniqueWordsOutput();
+      string wordCheckBooleanMessage = WordCounter.GetWordCheckBooleanMessage();
+      string totalTest = allCount + ". " + wordCheckBooleanMessage;
+
+      Assert.Equal(expectedResult, totalTest);
+    }
+    [Fact]
+    public void CountWords_IGotADogBecauseThereWasADogAtTheDogPound_TheWordDogOccurs3Times()
+    {
+      string input = "I got a dog because there was a dog at the dog pound.";
+      string wordToCheck = "dog";
+      string expectedResult = @"The word ""dog"" occurs 3 times.";
+
+      WordCounter.CountWords(input, wordToCheck);
+      string occurencesOfWord = WordCounter.GetOccurenceAmountMessage();;
+
+      Assert.Equal(expectedResult, occurencesOfWord);
+    }
   }
 }
