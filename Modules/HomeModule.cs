@@ -13,10 +13,6 @@ namespace WordCount
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
-      Post["/submit"] = _ => {
-        WordCounter userWordCounter = new WordCounter(Request.Form["userString"], Request.Form["userWord"]);
-        return View["index.cshtml", userWordCounter];
-      };
     }
   }
 }
