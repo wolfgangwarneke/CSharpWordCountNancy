@@ -21,7 +21,7 @@
           @{
             string userWord = Model.GetUserWordToCheck();
             string userWordBoldTags = "<strong><em>" + userWord + "</em></strong>";
-            string phraseWithBoldWords = Model.GetUserInput().Replace(userWord, userWordBoldTags);
+            string phraseWithBoldWords = Model.GetUserInput().Replace(userWord, userWordBoldTags).Replace(userWord.ToLower(), userWordBoldTags.ToLower());
           }
           @Html.Raw(phraseWithBoldWords);
         </p>
