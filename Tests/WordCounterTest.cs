@@ -24,5 +24,13 @@ namespace WordCount.Objects
       int result = testWordCounter.CalculateWordMatches();
       Assert.Equal(expected, result);
     }
+    [Fact]
+    public void Test_CalculateWordMatches_WordMatchesIsZeroWhenInputsAreNotEqual()
+    {
+      WordCounter testWordCounter = new WordCounter("no", "dice");
+      int expected = 0;
+      int result = testWordCounter.CalculateWordMatches();
+      Assert.Equal(expected, result);
+    }
   }
 }
