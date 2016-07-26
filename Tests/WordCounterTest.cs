@@ -10,11 +10,11 @@ namespace WordCount.Objects
       WordCounter testingWordCounter = new WordCounter("what", "what");
       Assert.Equal(testingWordCounter.GetUserInput(), testingWordCounter.GetUserWordToCheck());
     }
-    // [Fact]
-    // public void Test_WordCounter_UserPhraseDoesNotEqualUserWord()
-    // {
-    //   WordCounter testWordCounter = new WordCounter("no", "dice");
-    //   Assert.NotEqual(testWordCounter.GetUserInput(), testWordCounter.GetUserWordToCheck());
-    // }
+    [Fact]
+    public void Test_WordCounter_UserPhraseDoesNotEqualUserWord()
+    {
+      WordCounter testWordCounter = new WordCounter("no", "dice");
+      Assert.NotEqual(testWordCounter.GetUserInput(), testWordCounter.GetUserWordToCheck());
+    }
   }
 }
