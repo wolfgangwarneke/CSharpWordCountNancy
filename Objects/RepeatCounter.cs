@@ -3,12 +3,12 @@ using System;
 
 namespace WordCount.Objects
 {
-  public class WordCounter
+  public class RepeatCounter
   {
     private string _userInput;
     private string _userWordToCheck;
 
-    public WordCounter(string userInput, string userWordToCheck)
+    public RepeatCounter(string userInput, string userWordToCheck)
     {
       _userInput = userInput;
       _userWordToCheck = userWordToCheck;

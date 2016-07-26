@@ -14,8 +14,8 @@ namespace WordCount
         return View["index.cshtml"];
       };
       Post["/submit"] = _ => {
-        WordCounter userWordCounter = new WordCounter(Request.Form["userPhrase"], Request.Form["userWord"]);
-        return View["index.cshtml", userWordCounter];
+        RepeatCounter userRepeatCounter = new RepeatCounter(Request.Form["userPhrase"], Request.Form["userWord"]);
+        return View["index.cshtml", userRepeatCounter];
       };
     }
   }
