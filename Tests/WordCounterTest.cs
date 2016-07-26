@@ -72,5 +72,13 @@ namespace WordCount.Objects
       int result = testWordCounter.CalculateWordMatches();
       Assert.Equal(expected, result);
     }
+    [Fact]
+    public void Test_CaculateWordMatches_WordMatchesIsThreeWhenSearchWordOccursThreeTimesInWholePhrase()
+    {
+      WordCounter testWordCounter = new WordCounter("I got a dog because there was a dog at the dog pound", "dog");
+      int expected = 3;
+      int result = testWordCounter.CalculateWordMatches();
+      Assert.Equal(expected, result);
+    }
   }
 }
