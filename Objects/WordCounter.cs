@@ -26,14 +26,13 @@ namespace WordCount.Objects
 
     public int CalculateWordMatches()
     {
-      if (this.GetUserInput() == this.GetUserWordToCheck())
+      int matchesCount = 0;
+      string[] separatedWords = this.GetUserInput().Split(null);
+      foreach (var word in separatedWords)
       {
-        return 1;
+        if (word == this.GetUserWordToCheck()) matchesCount++;
       }
-      else
-      {
-        return 0;
-      }
+      return matchesCount;
     }
   }
 }

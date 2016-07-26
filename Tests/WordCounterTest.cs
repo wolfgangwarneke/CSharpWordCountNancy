@@ -32,5 +32,13 @@ namespace WordCount.Objects
       int result = testWordCounter.CalculateWordMatches();
       Assert.Equal(expected, result);
     }
+    [Fact]
+    public void Test_CalculateWordMatches_WordMatchesIsTwoWhenInputPhraseIsTwoIterationsOfInputWord()
+    {
+      WordCounter testWordCounter = new WordCounter("yolo yolo", "yolo");
+      int expected = 2;
+      int result = testWordCounter.CalculateWordMatches();
+      Assert.Equal(expected, result);
+    }
   }
 }
