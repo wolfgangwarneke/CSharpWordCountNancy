@@ -28,14 +28,14 @@
         <p>
           @{
             string matchOrMatches;
-            if (@Model.CalculateWordMatches() != 1) {
+            if (@Model.CountRepeats() != 1) {
               matchOrMatches = "matches";
             }
             else {
               matchOrMatches = "match";
             }
           }
-          The word @Model.GetUserWordToCheck() has @Model.CalculateWordMatches() @matchOrMatches
+          The word @Model.GetUserWordToCheck() has @Model.CountRepeats() @matchOrMatches
         </p>
       }
     </main>

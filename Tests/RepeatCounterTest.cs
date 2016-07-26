@@ -17,67 +17,67 @@ namespace WordCount.Objects
       Assert.NotEqual(testRepeatCounter.GetUserInput(), testRepeatCounter.GetUserWordToCheck());
     }
     [Fact]
-    public void Test_CalculateWordMatches_WordMatchesIsOneWhenInputsAreEqual()
+    public void Test_CountRepeats_WordMatchesIsOneWhenInputsAreEqual()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("what", "what");
       int expected = 1;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
     [Fact]
-    public void Test_CalculateWordMatches_WordMatchesIsZeroWhenInputsAreNotEqual()
+    public void Test_CountRepeats_WordMatchesIsZeroWhenInputsAreNotEqual()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("no", "dice");
       int expected = 0;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
     [Fact]
-    public void Test_CalculateWordMatches_WordMatchesIsTwoWhenInputPhraseIsTwoIterationsOfInputWord()
+    public void Test_CountRepeats_WordMatchesIsTwoWhenInputPhraseIsTwoIterationsOfInputWord()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("yolo yolo", "yolo");
       int expected = 2;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
     [Fact]
-    public void Test_CalculateWordMatches_WordMatchesIsThreeWhenInputPhraseIsThreeIterationsOfInputWord()
+    public void Test_CountRepeats_WordMatchesIsThreeWhenInputPhraseIsThreeIterationsOfInputWord()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("yolo yolo yolo", "yolo");
       int expected = 3;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
     [Fact]
-    public void Test_CalculateWordMatches_WordMatchesIsOneWhenTwoWordPhraseContainsOneInstanceOfSearchWord()
+    public void Test_CountRepeats_WordMatchesIsOneWhenTwoWordPhraseContainsOneInstanceOfSearchWord()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("yolo bro", "yolo");
       int expected = 1;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
     [Fact]
-    public void Test_CalculateWordMatches_WordMatchesIsOneWhenOneWordPhraseIsLexicallyButNotTypographicallyEqualToSearchWord()
+    public void Test_CountRepeats_WordMatchesIsOneWhenOneWordPhraseIsLexicallyButNotTypographicallyEqualToSearchWord()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("Howdy", "howdy");
       int expected = 1;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
     [Fact]
-    public void Test_CaculateWordMatches_WordMatchesIsZeroWhenPortionOneWordPhraseHasTheSameCharactersAsTheSearchWord()
+    public void Test_CountRepeats_WordMatchesIsZeroWhenPortionOneWordPhraseHasTheSameCharactersAsTheSearchWord()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("catcher", "cat");
       int expected = 0;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
     [Fact]
-    public void Test_CaculateWordMatches_WordMatchesIsThreeWhenSearchWordOccursThreeTimesInWholePhrase()
+    public void Test_CountRepeats_WordMatchesIsThreeWhenSearchWordOccursThreeTimesInWholePhrase()
     {
       RepeatCounter testRepeatCounter = new RepeatCounter("I got a dog because there was a dog at the dog pound", "dog");
       int expected = 3;
-      int result = testRepeatCounter.CalculateWordMatches();
+      int result = testRepeatCounter.CountRepeats();
       Assert.Equal(expected, result);
     }
   }

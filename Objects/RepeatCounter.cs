@@ -24,7 +24,7 @@ namespace WordCount.Objects
       return _userWordToCheck;
     }
 
-    public int CalculateWordMatches()
+    public int CountRepeats()
     {
       int matchesCount = 0;
       string[] separatedWords = this.GetUserInput().Split(null);
