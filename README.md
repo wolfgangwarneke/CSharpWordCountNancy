@@ -1,6 +1,6 @@
 # Word Count
 
-#### A Word Counter, July 8th, 2016
+#### A Word Counter, July 25th, 2016
 
 #### by Wolfgang Warneke
 

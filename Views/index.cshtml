@@ -9,8 +9,8 @@
       <h1>Word Count</h1>
 
       <form action="/submit" method="post">
-        <label for="userString">Place a sentence and which word to count</label><br>
-        <textarea name="userString" rows="5" cols="80" placeholder="Your text goes here"></textarea><br>
+        <label for="userPhrase">Place a sentence and which word to count</label><br>
+        <textarea name="userPhrase" rows="5" cols="80" placeholder="Your text goes here"></textarea><br>
         <label for="userWord">Which word to count?</label><br>
         <input type="text" name="userWord" id="userWord" required><br>
         <button type="submit">Do it.</button>
@@ -18,10 +18,19 @@
 
       @if (Model != null) {
         <p>
-          @Html.Raw(Model.GetBoldOutput())
+          @Model.GetUserInput()
         </p>
         <p>
-          @Model.GetOccurenceAmountMessage()
+          @{
+            string matchOrMatches;
+            if (@Model.CalculateWordMatches() != 1) {
+              matchOrMatches = "matches";
+            }
+            else {
+              matchOrMatches = "match";
+            }
+          }
+          The word @Model.GetUserWordToCheck() has @Model.CalculateWordMatches() @matchOrMatches
         </p>
       }
     </main>
