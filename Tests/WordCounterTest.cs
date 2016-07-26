@@ -7,8 +7,8 @@ namespace WordCount.Objects
     [Fact]
     public void Test_WordCounter_UserPhraseEqualsUserWord()
     {
-      WordCounter testingWordCounter = new WordCounter("what", "what");
-      Assert.Equal(testingWordCounter.GetUserInput(), testingWordCounter.GetUserWordToCheck());
+      WordCounter testWordCounter = new WordCounter("what", "what");
+      Assert.Equal(testWordCounter.GetUserInput(), testWordCounter.GetUserWordToCheck());
     }
     [Fact]
     public void Test_WordCounter_UserPhraseDoesNotEqualUserWord()
@@ -45,6 +45,14 @@ namespace WordCount.Objects
     {
       WordCounter testWordCounter = new WordCounter("yolo yolo yolo", "yolo");
       int expected = 3;
+      int result = testWordCounter.CalculateWordMatches();
+      Assert.Equal(expected, result);
+    }
+    [Fact]
+    public void Test_CalculateWordMatches_WordMatchesIsOneWhenTwoWordPhraseContainsOneInstanceOfSearchWord()
+    {
+      WordCounter testWordCounter = new WordCounter("yolo bro", "yolo");
+      int expected = 1;
       int result = testWordCounter.CalculateWordMatches();
       Assert.Equal(expected, result);
     }
