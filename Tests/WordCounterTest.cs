@@ -7,8 +7,8 @@ namespace WordCount.Objects
     [Fact]
     public void Test_WordCounter_UserPhraseEqualsUserWord()
     {
-      WordCounter testWordCounter = new WordCounter("what", "what");
-      Assert.Equal(testWordCounter.GetUserInput(), testWordCounter.GetUserWordToCheck());
+      WordCounter testingWordCounter = new WordCounter("what", "what");
+      Assert.Equal(testingWordCounter.GetUserInput(), testingWordCounter.GetUserWordToCheck());
     }
     // [Fact]
     // public void Test_WordCounter_UserPhraseDoesNotEqualUserWord()
