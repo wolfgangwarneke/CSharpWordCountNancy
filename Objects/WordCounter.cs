@@ -23,5 +23,17 @@ namespace WordCount.Objects
     {
       return _userWordToCheck;
     }
+
+    public int CalculateWordMatches()
+    {
+      if (this.GetUserInput() == this.GetUserWordToCheck())
+      {
+        return 1;
+      }
+      else
+      {
+        return 0;
+      }
+    }
   }
 }
