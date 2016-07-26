@@ -30,7 +30,7 @@ namespace WordCount.Objects
       string[] separatedWords = this.GetUserInput().Split(null);
       foreach (var word in separatedWords)
       {
-        if (word == this.GetUserWordToCheck()) matchesCount++;
+        if (word.ToLower() == this.GetUserWordToCheck().ToLower()) matchesCount++;
       }
       return matchesCount;
     }

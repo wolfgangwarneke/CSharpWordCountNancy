@@ -56,5 +56,13 @@ namespace WordCount.Objects
       int result = testWordCounter.CalculateWordMatches();
       Assert.Equal(expected, result);
     }
+    [Fact]
+    public void Test_CalculateWordMatches_WordMatchesIsOneWhenOneWordPhraseIsLexicallyButNotTypographicallyEqualToSearchWord()
+    {
+      WordCounter testWordCounter = new WordCounter("Howdy", "howdy");
+      int expected = 1;
+      int result = testWordCounter.CalculateWordMatches();
+      Assert.Equal(expected, result);
+    }
   }
 }
